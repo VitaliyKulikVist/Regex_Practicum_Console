@@ -85,7 +85,12 @@ namespace Regex_Practicum
                 FinalPhoneNumberConvertion("+38(098)-32-23-984", (PhoneNumberType)i);
                 Console.ResetColor();
             }
-            
+
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\n\t\t\tMobail Phone Variant 4:");
+            MobailPhoneVariant4();
+            Console.ResetColor();
+
 
             Console.ReadKey();
         }
@@ -216,6 +221,16 @@ namespace Regex_Practicum
             }
 
             Console.WriteLine($"input= {input}\t\t type= {phoneNumberType} \t\t result = {result}");
+        }
+
+        private static void MobailPhoneVariant4(string input = "12345f8940")
+        {
+            string pattern = @"^\d+$";
+            var reg = new Regex(pattern);
+
+            var result = reg.IsMatch(input);
+
+            Console.WriteLine($"input= {input}\t\t result = {result}");
         }
     }
 }
